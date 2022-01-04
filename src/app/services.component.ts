@@ -474,7 +474,7 @@ export class ServicesComponent implements OnInit {
       .get<APIResponseCredit<Actor>>(`${env.api_host}`+"/3/movie/"+movie_id+"/credits?api_key="+`${env.api_key}`+"&language=en-US")
         .subscribe({
           next : (response) => {
-            console.log( response );
+            // console.log( response );
             this.movie_credits = response.cast;
           },
           error : (error) => { console.log(error); }
@@ -486,7 +486,7 @@ export class ServicesComponent implements OnInit {
     .get(`${env.api_host}`+"/3/authentication/guest_session/new?api_key="+`${env.api_key}`)
       .subscribe({
         next : (response) => {
-          console.log( response );
+          // console.log( response );
           this.createRequestToken();
           // this.sessionToken =  Object.values(response)[0];
         },
@@ -498,7 +498,7 @@ export class ServicesComponent implements OnInit {
     .get(`${env.api_host}`+"/3/authentication/token/new?api_key="+`${env.api_key}`)
       .subscribe({
         next : (response) => {
-          console.log( response );
+          // console.log( response );
           this.sessionToken =  Object.values(response)[0];
         },
         error : (error) => { console.log(error); }
